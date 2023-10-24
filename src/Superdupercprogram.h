@@ -1,0 +1,12 @@
+//
+// Created by sebas on 24-10-2023.
+//
+
+#ifndef SEM_PROJ_1_SUPERDUPERCPROGRAM_H
+#define SEM_PROJ_1_SUPERDUPERCPROGRAM_H
+
+#endif //SEM_PROJ_1_SUPERDUPERCPROGRAM_H
+
+
+
+int poop = 1;
