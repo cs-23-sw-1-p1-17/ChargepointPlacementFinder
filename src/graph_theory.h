@@ -1,6 +1,6 @@
 #ifndef SEM_PROJ_1_GRAPH_THEORY_H
 #define SEM_PROJ_1_GRAPH_THEORY_H
-
+#include <stdbool.h>
 struct edge {
     bool isPresent;
     int traffic;
