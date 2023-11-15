@@ -12,8 +12,8 @@ struct edge {
     bool isPresent;
     int traffic;
     int distance;
-    struct node connection1;
-    struct node connection2;
+    struct node* connection1;
+    struct node* connection2;
 };
 
 
