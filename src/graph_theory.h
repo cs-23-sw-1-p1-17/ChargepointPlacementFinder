@@ -9,7 +9,7 @@ struct node {
 };
 
 struct edge {
-    bool isPresent;
+    bool is_present;
     int traffic;
     int distance;
     struct node* connection1;
