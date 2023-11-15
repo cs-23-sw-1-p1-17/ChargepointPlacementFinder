@@ -2,7 +2,7 @@
 #define SEM_PROJ_1_GRAPH_THEORY_H
 
 struct edge {
-    int isPresent;
+    bool isPresent;
     int traffic;
     int distance;
 };
