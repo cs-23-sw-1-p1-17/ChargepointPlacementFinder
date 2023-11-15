@@ -5,7 +5,7 @@
 
 struct node {
     int quality_of_stop;
-    int chargerPresent;
+    int charger_present;
 };
 
 struct edge {
