@@ -47,3 +47,8 @@ struct Edge* CreateTestNetworkEdgeMatrix()
 
     return working;
 }
+
+int TestNetworkNodeAmount()
+{
+    return TEST_NETWORK_NODE_AMOUNT;
+}

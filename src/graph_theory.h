@@ -16,6 +16,7 @@ struct Edge {
     struct Node* connection2;
 };
 
+int TestNetworkNodeAmount();
 
 int get_cell(int sizeOfMatrix, int x, int y);
 
