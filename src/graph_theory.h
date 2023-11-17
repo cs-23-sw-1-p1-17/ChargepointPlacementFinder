@@ -3,18 +3,24 @@
 #include <stdbool.h>
 
 
-struct node {
+struct Node {
     int quality_of_stop;
     int charger_present;
 };
 
-struct edge {
+struct Edge {
     bool is_present;
     int traffic;
     int distance;
-    struct node* connection1;
-    struct node* connection2;
+    struct Node* connection1;
+    struct Node* connection2;
 };
 
+
+int get_cell(int sizeOfMatrix, int x, int y);
+
+struct Node* CreateTestNetworkNodes();
+
+struct Edge* CreateTestNetworkEdgeMatrix();
 
 #endif //SEM_PROJ_1_GRAPH_THEORY_H
