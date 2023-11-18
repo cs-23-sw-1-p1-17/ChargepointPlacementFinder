@@ -9,7 +9,7 @@
 //Assumes input is 1-indexed
 int get_cell(int sizeOfMatrix, int x, int y)
 {
-    return y * sizeOfMatrix + x - 1;
+    return (y-1) * sizeOfMatrix + x - 1;
 }
 
 struct Node* CreateTestNetworkNodes()
