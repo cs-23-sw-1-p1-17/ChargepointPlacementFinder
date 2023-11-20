@@ -1,10 +1,7 @@
 //
 // Created by Peter on 15/11/2023.
 //
-#include <stdio.h>
-#include "graph_theory.h"
-#include <stdlib.h>
-#define TEST_NETWORK_NODE_AMOUNT 10
+#include "graph_functions.h"
 
 //Assumes input is 1-indexed
 int get_cell(int sizeOfMatrix, int x, int y)
