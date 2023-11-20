@@ -8,12 +8,12 @@ int get_cell(int matrix_size, int x, int y)
     return (y-1) * matrix_size + x - 1;
 }
 
-struct Node* create_test_network_nodes()
+node_t* create_test_network_nodes()
 {
-    struct Node* working = (struct Node*) malloc((sizeof(struct Node)) * TEST_NETWORK_NODE_AMOUNT);
+    node_t* working = (struct Node*) malloc((sizeof(struct Node)) * TEST_NETWORK_NODE_AMOUNT);
 
     //Fill out the node list here
-    struct Node empty = {0,0};
+    node_t empty = {0,0};
 
     for(int i = 0; i < TEST_NETWORK_NODE_AMOUNT; i++)
     {
@@ -25,11 +25,11 @@ struct Node* create_test_network_nodes()
     return working;
 }
 
-struct Edge* create_test_network_edge_matrix() {
-    struct Edge* working = (struct Edge*) malloc(sizeof(struct Edge) * TEST_NETWORK_NODE_AMOUNT * TEST_NETWORK_NODE_AMOUNT);
+edge_t* create_test_network_edge_matrix() {
+    edge_t* working = (struct Edge*) malloc(sizeof(struct Edge) * TEST_NETWORK_NODE_AMOUNT * TEST_NETWORK_NODE_AMOUNT);
 
     //Fill out the edge matrix here
-    struct Edge empty = {false, 0, 0, NULL, NULL};
+    edge_t empty = {false, 0, 0, NULL, NULL};
 
     for(int i = 0; i < TEST_NETWORK_NODE_AMOUNT * TEST_NETWORK_NODE_AMOUNT; i++)
     {
