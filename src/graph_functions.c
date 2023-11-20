@@ -1,15 +1,14 @@
 //
-// Created by Peter on 15/11/2023.
+// Created by Petra on 15/11/2023.
 //
 #include "graph_functions.h"
 
-//Assumes input is 1-indexed
-int get_cell(int sizeOfMatrix, int x, int y)
+int get_cell(int matrix_size, int x, int y)
 {
-    return (y-1) * sizeOfMatrix + x - 1;
+    return (y-1) * matrix_size + x - 1;
 }
 
-struct Node* CreateTestNetworkNodes()
+struct Node* create_test_network_nodes()
 {
     struct Node* working = (struct Node*) malloc((sizeof(struct Node)) * TEST_NETWORK_NODE_AMOUNT);
 
@@ -26,8 +25,7 @@ struct Node* CreateTestNetworkNodes()
     return working;
 }
 
-struct Edge* CreateTestNetworkEdgeMatrix()
-{
+struct Edge* create_test_network_edge_matrix() {
     struct Edge* working = (struct Edge*) malloc(sizeof(struct Edge) * TEST_NETWORK_NODE_AMOUNT * TEST_NETWORK_NODE_AMOUNT);
 
     //Fill out the edge matrix here
@@ -45,7 +43,7 @@ struct Edge* CreateTestNetworkEdgeMatrix()
     return working;
 }
 
-int TestNetworkNodeAmount()
+int test_network_node_amount()
 {
     return TEST_NETWORK_NODE_AMOUNT;
 }

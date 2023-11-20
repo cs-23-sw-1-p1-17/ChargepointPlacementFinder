@@ -7,13 +7,13 @@
 #define TEST_NETWORK_NODE_AMOUNT 10
 
 
-int TestNetworkNodeAmount();
+int test_network_node_amount();
 
-int get_cell(int sizeOfMatrix, int x, int y);
+int get_cell(int matrix_size, int x, int y);
 
-struct Node* CreateTestNetworkNodes();
+struct Node* create_test_network_nodes();
 
-struct Edge* CreateTestNetworkEdgeMatrix();
+struct Edge* create_test_network_edge_matrix();
 
 struct Node {
     int quality_of_stop;
