@@ -13,10 +13,10 @@ typedef struct _node {
 
 typedef struct _edge {
     bool is_present;
-    int traffic;
+    int traffic;another boo boo
     int distance;
-    struct Node* connection1;
-    struct Node* connection2;
+    node_t* connection1;
+    node_t* connection2;
 } edge_t;
 
 int test_network_node_amount();
