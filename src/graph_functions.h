@@ -13,7 +13,7 @@ typedef struct _node {
 
 typedef struct _edge {
     bool is_present;
-    int traffic;another boo boo
+    int traffic;
     int distance;
     node_t* connection1;
     node_t* connection2;
