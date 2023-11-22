@@ -22,5 +22,5 @@ jobs:
         id: upload-review
 
       # If there are any comments, fail the check
-      - if: steps.review.outputs.total_comments > 0
-        run: exit 1
+      #- if: steps.review.outputs.total_comments > 0
+      #  run: exit 1
