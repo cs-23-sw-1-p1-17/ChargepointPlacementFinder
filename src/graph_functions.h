@@ -3,7 +3,6 @@
 #include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include "graph_functions.h"
 #define TEST_NETWORK_NODE_AMOUNT 10
 
 typedef struct _node {
