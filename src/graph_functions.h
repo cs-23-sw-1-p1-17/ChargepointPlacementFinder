@@ -5,12 +5,12 @@
 #include <stdlib.h>
 #define TEST_NETWORK_NODE_AMOUNT 10
 
-typedef struct _node {
+typedef struct {
     int quality_of_stop;
     int charger_present;
 } node_t;
 
-typedef struct _edge {
+typedef struct {
     bool is_present;
     int traffic;
     int distance;
