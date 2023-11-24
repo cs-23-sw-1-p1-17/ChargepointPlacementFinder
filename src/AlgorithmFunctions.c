@@ -1,6 +1,49 @@
 #include "AlgorithmFunctions.h"
+#include "graph_functions.c"
+solution_node* create_solution_array(node_t* node_list, int node_list_length, edge_t* edge_matrix)
+{
+    //Create solution node array
+    solution_node* solution_array = (solution_node*) malloc(sizeof(solution_node)*node_list_length);
 
-solution_node* create_solution_array(node_t* node_list, int node_list_length, edge_t* ege_matrix){}
+    for(int i = 0; i < node_list_length; i++)
+    {
+
+        //Code for the primary nodes
+        int totalTrafficAttracted = 0;
+        for(int j = 0; j < node_list_length; j++)
+        {
+            if(edge_matrix[get_cell(node_list_length, i, j)].is_present)
+            {
+                totalTrafficAttracted += edge_matrix[get_cell(node_list_length, i, j)].traffic;
+            }
+        }
+
+        //TotalTrafficAttracted now contains all the primary edges
+
+
+        int secondaryNodeTraffic;
+        for(int j = 0; i < node_list_length; i++)
+        {
+            secondaryNodeTraffic = 0;
+            //Fill edge with empty
+            if(edgeMatrix[node.number][j].isPresent)
+            {
+                //GetConnectedNode
+                for()
+                {
+                    GetTotalTrafficOfEach
+                }
+                currentEdge
+                        CalculateAttractedTrafficFromQualityStop,
+                GetSecondaryFactor(currentNodeQuality - )
+                Multiply with secondary factor
+                Add to totalTrafficAttracted
+            }
+        }
+//Save current traffic attracted in some form of array
+    }
+
+}
 
 node_t* get_connected_node (node_t* current_node, edge_t current_edge)
 {
