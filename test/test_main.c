@@ -1,5 +1,27 @@
 #include <assert.h>
+#include "unity.h"
+#define UNITY_EXCLUDE_STDINT_H
 
+void setUp(void) {
+    // set stuff up here
+}
+
+void tearDown(void) {
+    // clean stuff up here
+}
+
+void test_function_should_doBlahAndBlah(void) {
+    //test stuff
+}
+
+void test_function_should_doAlsoDoBlah(void) {
+    //more test stuff
+}
+
+// not needed when using generate_test_runner.rb
 int main(void) {
-    /* Insert your test-function calls here */
+    UNITY_BEGIN();
+    RUN_TEST(test_function_should_doBlahAndBlah);
+    RUN_TEST(test_function_should_doAlsoDoBlah);
+    return UNITY_END();
 }
