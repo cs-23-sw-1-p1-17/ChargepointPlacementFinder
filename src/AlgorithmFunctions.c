@@ -26,7 +26,7 @@ solution_node* create_solution_array(node_t* node_list, int node_list_length, ed
         {
             secondaryNodeTraffic = 0;
             //Fill edge with empty
-            if(edgeMatrix[node.number][j].isPresent)
+            if(edge_matrix[node.number][j].isPresent)
             {
                 //GetConnectedNode
                 for()
@@ -61,4 +61,30 @@ int compare_solution_node(const void* a, const void* b)
 void sort_solution_node_array(solution_node* solution_nodes, int length_of_solution_nodes)
 {
     qsort(solution_nodes, length_of_solution_nodes, sizeof(solution_node), compare_solution_node);
+}
+
+double get_secondary_factor(int primary_node_quality, int secondary_node_quality)
+{
+    int relative_factor = primary_node_quality - secondary_node_quality;
+
+    switch(relative_factor)
+    {
+        case 4:
+            return 0.2;
+
+        case 3:
+            return 0.15;
+
+        case 2:
+            return 0.1;
+
+        case 1:
+            return 0.05;
+
+        case 0:
+            return 0;
+
+
+
+    }
 }

@@ -12,3 +12,5 @@ node_t* get_connected_node (node_t* current_node, edge_t current_edge);
 int compare_solution_node(const void* a, const void* b);
 
 void sort_solution_node_array(solution_node* solution_nodes, int length_of_solution_nodes);
+
+double get_secondary_factor(int primary_node_quality, int secondary_node_quality);
