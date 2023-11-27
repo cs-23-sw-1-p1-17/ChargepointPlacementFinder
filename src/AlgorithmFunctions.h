@@ -1,4 +1,12 @@
 #include "graph_functions.h"
+#define POSITIVE_FOUR 0.2
+#define POSITIVE_THREE 0.15
+#define POSITIVE_TWO 0.1
+#define POSITIVE_ONE 0.05
+#define NEGATIVE_ONE (-0.05)
+#define NEGATIVE_TWO (-0.1)
+#define NEGATIVE_THREE (-0.15)
+#define NEGATIVE_FOUR (-0.2)
 
 typedef struct {
     int node_ID;
