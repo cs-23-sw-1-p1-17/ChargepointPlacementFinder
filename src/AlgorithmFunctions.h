@@ -2,7 +2,7 @@
 
 typedef struct {
     int node_ID;
-    int totalTrafficAttracted;
+    int total_traffic_attracted;
 } solution_node;
 
 solution_node* create_solution_array(node_t* node_list, int node_list_length, edge_t* edge_matrix);
