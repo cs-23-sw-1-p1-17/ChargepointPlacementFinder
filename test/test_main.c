@@ -1,5 +1,5 @@
 #include <assert.h>
-#include "unity.h"
+#include "../external/unity.h"
 #define UNITY_EXCLUDE_STDINT_H
 
 void setUp(void) {

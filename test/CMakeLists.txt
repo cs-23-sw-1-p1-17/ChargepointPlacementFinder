@@ -1,7 +1,7 @@
 add_executable(
         test_runner
         test_main.c
-        unity.c # unity test framework
+        ../external/unity.c # unity test framework
 )
 
 target_link_libraries(test_runner m)
