@@ -84,6 +84,21 @@ double get_secondary_factor(int primary_node_quality, int secondary_node_quality
         case 0:
             return 0;
 
+        case -1:
+            return -0.05;
+
+        case -2:
+            return -0.1;
+
+        case -3:
+            return -0.15;
+
+        case -4:
+            return -0.2;
+
+        default:
+            printf("Something went wrong in relative factor calculation...");
+            return 0;
 
 
     }
