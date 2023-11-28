@@ -19,7 +19,7 @@ solution_node* create_solution_array(node_t* node_list, int node_list_length, ed
 
 
         int secondary_node_traffic = 0;
-        node_t *current_secondary_node;
+        node_t *current_secondary_node = NULL;
 
         //Running through connection matrix
         //Still on primary node
