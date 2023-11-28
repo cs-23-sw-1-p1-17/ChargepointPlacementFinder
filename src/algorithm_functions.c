@@ -1,9 +1,10 @@
-#include "AlgorithmFunctions.h"
-#include "graph_functions.c"
-solution_node* create_solution_array(node_t* node_list, int node_list_length, edge_t* edge_matrix) {
+#include "algorithm_functions.h"
+#include "graph_functions.h"
+
+solution_node_t* create_solution_array(node_t* node_list, int node_list_length, edge_t* edge_matrix) {
     //Create solution node array
-    solution_node *solution_array = (solution_node *) malloc(sizeof(solution_node) * node_list_length);
-    solution_node current_solution_node;
+    solution_node_t *solution_array = (solution_node_t *) malloc(sizeof(solution_node_t) * node_list_length);
+    solution_node_t current_solution_node;
 
     for (int i = 0; i < node_list_length; i++) {
 
@@ -58,14 +59,14 @@ node_t* get_connected_node (node_t* current_node, edge_t current_edge)
 
 int compare_solution_node(const void* a, const void* b)
 {
-    solution_node a1 = *(solution_node*) a;
-    solution_node b1 = *(solution_node*) b;
+    solution_node_t a1 = *(solution_node_t*) a;
+    solution_node_t b1 = *(solution_node_t*) b;
     return b1.total_traffic_attracted - a1.total_traffic_attracted;
 }
 
-void sort_solution_node_array(solution_node* solution_nodes, int length_of_solution_nodes)
+void sort_solution_node_array(solution_node_t* solution_nodes, int length_of_solution_nodes)
 {
-    qsort(solution_nodes, length_of_solution_nodes, sizeof(solution_node), compare_solution_node);
+    qsort(solution_nodes, length_of_solution_nodes, sizeof(solution_node_t), compare_solution_node);
 }
 
 double get_secondary_factor(int primary_node_quality, int secondary_node_quality)

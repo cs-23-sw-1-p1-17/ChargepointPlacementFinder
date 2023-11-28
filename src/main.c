@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "AlgorithmFunctions.c"
+#include "algorithm_functions.h"
 
 //Here, we want a 2D array featuring the struct implementing how we want to represent the edges of the graph
 
