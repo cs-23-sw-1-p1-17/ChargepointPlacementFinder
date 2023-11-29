@@ -1,6 +1,0 @@
-{
-  "Checks": "*",
-  "LineFilter": [
-    "external/"
-  ]
-}
