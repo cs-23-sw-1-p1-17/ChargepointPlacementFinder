@@ -54,7 +54,7 @@ solution_node_t* create_solution_array(node_t* node_list, int node_list_length, 
 node_t* get_connected_node (node_t* current_node, edge_t current_edge)
 {
     if(current_edge.connection1 == current_node) { return current_edge.connection2;
-    } else return current_edge.connection1;
+    } return current_edge.connection1;
 }
 
 int compare_solution_node(const void* a, const void* b)
