@@ -1,5 +1,4 @@
 #include "algorithm_functions.h"
-#include "graph_functions.h"
 
 solution_node_t* create_solution_array(node_t* node_list, int node_list_length, edge_t* edge_matrix) {
     //Create solution node array
