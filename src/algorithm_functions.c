@@ -51,26 +51,22 @@ solution_node_t* create_solution_array(node_t* node_list, int node_list_length, 
     return solution_array;
 }
 
-node_t* get_connected_node (node_t* current_node, edge_t current_edge)
-{
+node_t* get_connected_node (node_t* current_node, edge_t current_edge) {
     if(current_edge.connection1 == current_node) { return current_edge.connection2;
     } return current_edge.connection1;
 }
 
-int compare_solution_node(const void* a, const void* b)
-{
+int compare_solution_node(const void* a, const void* b) {
     solution_node_t a1 = *(solution_node_t*) a;
     solution_node_t b1 = *(solution_node_t*) b;
     return b1.total_traffic_attracted - a1.total_traffic_attracted;
 }
 
-void sort_solution_node_array(solution_node_t* solution_nodes, int length_of_solution_nodes)
-{
+void sort_solution_node_array(solution_node_t* solution_nodes, int length_of_solution_nodes) {
     qsort(solution_nodes, length_of_solution_nodes, sizeof(solution_node_t), compare_solution_node);
 }
 
-double get_secondary_factor(int primary_node_quality, int secondary_node_quality)
-{
+double get_secondary_factor(int primary_node_quality, int secondary_node_quality) {
     int relative_factor = primary_node_quality - secondary_node_quality;
 
     switch(relative_factor)
@@ -105,7 +101,5 @@ double get_secondary_factor(int primary_node_quality, int secondary_node_quality
         default:
             printf("Something went wrong in relative factor calculation...");
             return 0;
-
-
     }
 }
