@@ -3,7 +3,6 @@
 #include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
-#define TEST_NETWORK_NODE_AMOUNT 10
 
 typedef struct {
     int node_id;
@@ -19,10 +18,6 @@ typedef struct {
     node_t* connection2;
 } edge_t;
 
-int test_network_node_amount();
 
 int get_cell(int matrix_size, int x, int y);
 
-node_t* create_test_network_nodes();
-
-edge_t* create_test_network_edge_matrix();
