@@ -1,4 +1,4 @@
-#include "algorithm_functions.h"
+ #include "algorithm_functions.h"
 
 solution_node_t* create_solution_array(node_t* node_list, int node_list_length, edge_t* edge_matrix) {
     // Create solution node array
@@ -68,29 +68,7 @@ void sort_solution_node_array(solution_node_t* solution_nodes, int length_of_sol
 
 double get_secondary_factor(int primary_node_quality, int secondary_node_quality) {
     int relative_factor = primary_node_quality - secondary_node_quality;
+    int factor_array[9] = {NEGATIVE_FOUR, NEGATIVE_THREE, NEGATIVE_TWO, NEGATIVE_ONE, 0, POSITIVE_ONE, POSITIVE_TWO, POSITIVE_THREE, POSITIVE_FOUR};
+    return factor_array[relative_factor + 4];
 
-    switch(relative_factor)
-    {
-        case 4:
-            return POSITIVE_FOUR;
-        case 3:
-            return POSITIVE_THREE;
-        case 2:
-            return POSITIVE_TWO;
-        case 1:
-            return POSITIVE_ONE;
-        case 0:
-            return 0;
-        case -1:
-            return NEGATIVE_ONE;
-        case -2:
-            return NEGATIVE_TWO;
-        case -3:
-            return NEGATIVE_THREE;
-        case -4:
-            return NEGATIVE_FOUR;
-        default:
-            printf("Something went wrong in relative factor calculation...");
-            return 0;
-    }
 }
