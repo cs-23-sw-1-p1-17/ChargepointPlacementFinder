@@ -68,7 +68,7 @@ void sort_solution_node_array(solution_node_t* solution_nodes, int length_of_sol
 
 double get_secondary_factor(int primary_node_quality, int secondary_node_quality) {
     int relative_factor = primary_node_quality - secondary_node_quality;
-    double factor_array[9] = {NEGATIVE_FOUR, NEGATIVE_THREE, NEGATIVE_TWO, NEGATIVE_ONE, 0, POSITIVE_ONE, POSITIVE_TWO, POSITIVE_THREE, POSITIVE_FOUR};
+    double factor_array[] = {NEGATIVE_FOUR, NEGATIVE_THREE, NEGATIVE_TWO, NEGATIVE_ONE, 0, POSITIVE_ONE, POSITIVE_TWO, POSITIVE_THREE, POSITIVE_FOUR};
     return factor_array[relative_factor + 4];
 
 }
