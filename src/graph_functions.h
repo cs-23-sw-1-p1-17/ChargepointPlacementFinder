@@ -6,7 +6,7 @@
 
 typedef struct {
     int node_id;
-    int quality_of_stop;
+    double quality_of_stop;
     int charger_present;
 } node_t;
 
