@@ -1,5 +1,7 @@
  #include "algorithm_functions.h"
 
+#include <math.h>
+
 solution_node_t* create_solution_array(node_t* node_list, int node_list_length, edge_t* edge_matrix) {
     // Create solution node array
     solution_node_t *solution_array = (solution_node_t *) malloc(sizeof(solution_node_t) * node_list_length);
@@ -36,8 +38,8 @@ solution_node_t* create_solution_array(node_t* node_list, int node_list_length, 
                 }
 
                 secondary_node_traffic -= current_edge.traffic;
-                secondary_node_traffic *= get_secondary_factor(node_list[i].quality_of_stop,
-                                                               current_secondary_node->quality_of_stop);
+                secondary_node_traffic = floor(secondary_node_traffic * get_secondary_factor(node_list[i].quality_of_stop,
+                                                               current_secondary_node->quality_of_stop));
                 total_traffic_attracted += secondary_node_traffic;
             }
         }
