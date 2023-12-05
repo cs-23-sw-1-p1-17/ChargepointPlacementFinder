@@ -68,6 +68,6 @@ void sort_solution_node_array(solution_node_t* solution_nodes, int length_of_sol
     qsort(solution_nodes, length_of_solution_nodes, sizeof(solution_node_t), compare_solution_node);
 }
 
-double get_secondary_factor(int primary_node_quality, int secondary_node_quality) {
+double get_secondary_factor(double primary_node_quality, double secondary_node_quality) {
     return (primary_node_quality - secondary_node_quality) * 0.04;
 }

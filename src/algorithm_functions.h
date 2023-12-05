@@ -21,4 +21,4 @@ int compare_solution_node(const void* solution_node_a, const void* solution_node
 
 void sort_solution_node_array(solution_node_t* solution_nodes, int length_of_solution_nodes);
 
-double get_secondary_factor(int primary_node_quality, int secondary_node_quality);
+double get_secondary_factor(double primary_node_quality, double secondary_node_quality);
