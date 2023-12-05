@@ -1,6 +1,5 @@
 #include <stdio.h>
-#include <malloc.h>
-#include "graph_functions.h"
+#include "algorithm_functions.h"
 
 //Here, we want a 2D array featuring the struct implementing how we want to represent the edges of the graph
 
