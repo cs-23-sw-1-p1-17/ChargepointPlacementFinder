@@ -1,6 +1,4 @@
- #include "algorithm_functions.h"
-
-#include <math.h>
+#include "algorithm_functions.h"
 
 solution_node_t* create_solution_array(node_t* node_list, int node_list_length, edge_t* edge_matrix) {
     // Create solution node array
@@ -19,7 +17,6 @@ solution_node_t* create_solution_array(node_t* node_list, int node_list_length, 
         }
 
         // TotalTrafficAttracted now contains all the primary edges
-
 
         int secondary_node_traffic = 0;
         node_t *current_secondary_node = NULL;
@@ -69,5 +66,5 @@ void sort_solution_node_array(solution_node_t* solution_nodes, int length_of_sol
 }
 
 double get_secondary_factor(double primary_node_quality, double secondary_node_quality) {
-    return (primary_node_quality - secondary_node_quality) * 0.04;
+    return (primary_node_quality - secondary_node_quality) * NODE_ATTRACTION_FACTOR;
 }
