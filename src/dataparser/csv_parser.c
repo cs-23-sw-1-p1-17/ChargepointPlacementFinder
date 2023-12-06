@@ -1,4 +1,5 @@
 #include "csv_parser.h"
+#include "../src/graph_functions.h"
 
 void parse_nodes(node_t *nodes) {
     // open file with nodes
@@ -46,12 +47,25 @@ void parse_edges(edge_t *edges, node_t *nodes) {
     }
 }
 
-void example_parsing() {
+void example_parsing_print(edge_t *edges) {
+    for (int i = 0; i < NUM_EXAMPLE_EDGES; ++i) {
+        printf("E-name: %s\nE-pres: %d\nE-traf: %d\nE-dist: %lf\n",
+               edges[i].name, edges[i].is_present, edges[i].traffic, edges[i].distance);
+        printf("->n1-name: %s\n->n1-id:  %d\n->n1-qual: %lf\n->n1-char: %d\n",
+               edges[i].connection1->name, edges[i].connection1->node_id,edges[i].connection1->quality_of_stop,edges[i].connection1->charger_present);
+        printf("->n2-name: %s\n->n2-id:  %d\n->n2-qual: %lf\n->n2-char: %d\n",
+               edges[i].connection2->name, edges[i].connection2->node_id,edges[i].connection2->quality_of_stop,edges[i].connection2->charger_present);
+        printf("\n");
+    }
+}
+
+edge_t* example_parsing() {
     node_t nodes[NUM_EXAMPLE_NODES];
     parse_nodes(nodes);
 
     edge_t edges[NUM_EXAMPLE_EDGES];
     parse_edges(edges, nodes);
 
+    example_parsing_print(edges);
 }
 
