@@ -28,14 +28,13 @@ solution_node_t* create_solution_array(node_t* node_list, int node_list_length, 
             secondary_node_traffic = 0;
 
             if (edge_matrix[get_cell(node_list_length, i, j)].is_present) {
-                current_secondary_node = &node_list[j];
                 for (int k = 0; k < node_list_length; k++) {
                     secondary_node_traffic += edge_matrix[get_cell(node_list_length, j, k)].traffic;
                 }
 
                 secondary_node_traffic -= edge_matrix[get_cell(node_list_length, i , j)].traffic;
                 secondary_node_traffic = floor(secondary_node_traffic * get_secondary_factor(node_list[i].quality_of_stop,
-                                                               current_secondary_node->quality_of_stop));
+                                                                                             node_list[j].quality_of_stop));
                 total_traffic_attracted += secondary_node_traffic;
             }
         }
