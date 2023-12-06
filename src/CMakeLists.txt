@@ -8,5 +8,6 @@ target_include_directories(algorithm_functions PUBLIC .)
 
 add_subdirectory(dataparser)
 
-add_executable(main main.c)
+add_executable(main main.c
+        print_function.c)
 target_link_libraries(main m)
