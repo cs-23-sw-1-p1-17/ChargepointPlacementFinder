@@ -1,3 +1,4 @@
+#pragma once
 #include "graph_functions.h"
 #define TEST_NETWORK_NODE_AMOUNT 10
 
