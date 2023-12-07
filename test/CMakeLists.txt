@@ -1,11 +1,9 @@
-add_executable(
-        test_runner
-        test_main.c
-        ../external/unity.c # unity test framework
-)
+add_subdirectory(dataparser)
 
-target_link_libraries(test_runner m)
+add_executable(test_runner test_main.c)
+
+target_link_libraries(test_runner PRIVATE graph_functions algorithm_functions unity_framework)
+target_include_directories(test_runner PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/src)
 
 add_test(NAME test_runner COMMAND test_runner)
 
-add_subdirectory(dataparser)
