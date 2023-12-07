@@ -1,10 +1,9 @@
 #include "csv_parser.h"
-#include "../src/graph_functions.h"
 
 void parse_nodes(node_t *nodes) {
     // open file with nodes
     FILE *in_fp;
-    in_fp = fopen("example_node_list.csv", "r");
+    in_fp = fopen("../src/dataparser/node_list.csv", "r");
     if(in_fp == NULL) {
         printf("Error!");
         exit(EXIT_FAILURE);
@@ -14,7 +13,7 @@ void parse_nodes(node_t *nodes) {
         // creating temp variables
         node_t node;
         // get values from string
-        int rt = fscanf(in_fp, " %[^,],%d,%d,%lf,%*[^ \\t\\n]",
+        int rt = fscanf(in_fp, " %[^;];%d;%d;%lf%*[^ \\t\\n]",
                         node.name, &node.node_id, &node.charger_present, &node.quality_of_stop);
         // assign if successfully parsed
         if (rt == NUM_EXAMPLE_NODE_PARSED_VALUES)
@@ -25,7 +24,7 @@ void parse_nodes(node_t *nodes) {
 void parse_edges(edge_t *edges, node_t *nodes) {
     // open file with edges
     FILE *in_fp;
-    in_fp = fopen("example_edge_list.csv", "r");
+    in_fp = fopen("../src/dataparser/edge_list.csv", "r");
     if(in_fp == NULL) {
         printf("Error!");
         exit(EXIT_FAILURE);
@@ -36,7 +35,7 @@ void parse_edges(edge_t *edges, node_t *nodes) {
         edge_t edge;
         int n_a, n_b;
         // get values from string
-        int rt = fscanf(in_fp, " %[^,],%*[^,],%d,%lf,%d,%d%*[^ \\t\\n]",
+        int rt = fscanf(in_fp, " %[^;]s;%*[^;];%d;%lf;%d;%d%*[^ \\t\\n]",
                         edge.name, &edge.traffic,&edge.distance,&n_a,&n_b);
         // assign connecting nodes
         edge.connection1 = &nodes[n_a];
