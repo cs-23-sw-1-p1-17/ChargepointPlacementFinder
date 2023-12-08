@@ -35,7 +35,7 @@ void parse_edges(edge_t *edges, node_t *nodes) {
         edge_t edge;
         int n_a, n_b;
         // get values from string
-        int rt = fscanf(in_fp, " %[^;]s;%*[^;];%d;%lf;%d;%d%*[^ \\t\\n]",
+        int rt = fscanf(in_fp, " %[^;]s;%d;%lf;%d;%d%*[^ \\t\\n]",
                         edge.name, &edge.traffic,&edge.distance,&n_a,&n_b);
         // assign connecting nodes
         edge.connection1 = &nodes[n_a];
