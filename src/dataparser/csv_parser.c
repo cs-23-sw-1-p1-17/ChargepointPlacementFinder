@@ -2,8 +2,8 @@
 
 void parse_nodes(node_t *nodes) {
     // open file with nodes
-    FILE *in_fp;
-    in_fp = fopen("../src/dataparser/node_list.csv", "r");
+    FILE *in_fp = NULL;
+    in_fp = fopen(NODE_LIST_FILEPATH, "r");
     if(in_fp == NULL) {
         printf("Error!");
         exit(EXIT_FAILURE);
@@ -23,7 +23,7 @@ void parse_nodes(node_t *nodes) {
 
 void parse_edges(edge_t *edges, node_t *nodes) {
     // open file with edges
-    FILE *in_fp;
+    FILE *in_fp = NULL;
     in_fp = fopen("../src/dataparser/edge_list.csv", "r");
     if(in_fp == NULL) {
         printf("Error!");

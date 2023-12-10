@@ -8,6 +8,7 @@
 #define NUM_EXAMPLE_EDGES 20
 #define NUM_EXAMPLE_NODE_PARSED_VALUES 4
 #define NUM_EXAMPLE_EDGE_PARSED_VALUES 5
+#define NODE_LIST_FILEPATH ("../src/dataparser/node_list.csv")
 
 void parse_nodes(node_t *nodes);
 void parse_edges(edge_t *edges, node_t *nodes);
