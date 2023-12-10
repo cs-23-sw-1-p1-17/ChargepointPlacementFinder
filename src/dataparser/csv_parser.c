@@ -24,7 +24,7 @@ void parse_nodes(node_t *nodes) {
 void parse_edges(edge_t *edges, node_t *nodes) {
     // open file with edges
     FILE *in_fp = NULL;
-    in_fp = fopen("../src/dataparser/edge_list.csv", "r");
+    in_fp = fopen(EDGE_LIST_FILEPATH, "r");
     if(in_fp == NULL) {
         printf("Error!");
         exit(EXIT_FAILURE);
