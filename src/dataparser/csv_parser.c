@@ -33,13 +33,14 @@ void parse_edges(edge_t *edges, node_t *nodes) {
     for (int i = 0; i < NUM_EXAMPLE_EDGES; ++i) {
         // creating temp variables
         edge_t edge;
-        int n_a, n_b;
+        int node_a;
+        int node_b;
         // get values from string
         int rt = fscanf(in_fp, " %[^;]s;%d;%lf;%d;%d%*[^ \\t\\n]",
                         edge.name, &edge.traffic, &edge.distance, &node_a, &node_b);
         // assign connecting nodes
-        edge.connection1 = &nodes[n_a];
-        edge.connection2 = &nodes[n_b];
+        edge.connection1 = &nodes[node_a];
+        edge.connection2 = &nodes[node_b];
         // assign if successfully parsed
         if (rt == NUM_EXAMPLE_EDGE_PARSED_VALUES)
             edges[i] = edge;
