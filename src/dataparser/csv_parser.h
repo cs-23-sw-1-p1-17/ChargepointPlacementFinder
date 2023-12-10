@@ -1,7 +1,7 @@
 #pragma once
 #include <stdio.h>
 #include <stdlib.h>
-#include "../graph_functions.h"
+#include "graph_functions.h"
 
 #define NUM_EXAMPLE_NODES 16
 #define NUM_EXAMPLE_EDGES 20
