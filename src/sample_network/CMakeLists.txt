@@ -4,4 +4,4 @@ add_library(sample_network
 
 target_include_directories(sample_network PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 
-target_link_libraries(dataparser PUBLIC graph)
+target_link_libraries(sample_network PUBLIC graph)
