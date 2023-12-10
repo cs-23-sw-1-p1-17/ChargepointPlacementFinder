@@ -16,8 +16,9 @@ void parse_nodes(node_t *nodes) {
         int rt = fscanf(in_fp, " %[^;];%d;%d;%lf%*[^ \\t\\n]",
                         node.name, &node.node_id, &node.charger_present, &node.quality_of_stop);
         // assign if successfully parsed
-        if (rt == NUM_EXAMPLE_NODE_PARSED_VALUES)
+        if (rt == NUM_EXAMPLE_NODE_PARSED_VALUES){
             nodes[i] = node;
+        }
     }
 }
 
@@ -42,8 +43,9 @@ void parse_edges(edge_t *edges, node_t *nodes) {
         edge.connection1 = &nodes[node_a];
         edge.connection2 = &nodes[node_b];
         // assign if successfully parsed
-        if (rt == NUM_EXAMPLE_EDGE_PARSED_VALUES)
+        if (rt == NUM_EXAMPLE_EDGE_PARSED_VALUES) {
             edges[i] = edge;
+        }
     }
 }
 
