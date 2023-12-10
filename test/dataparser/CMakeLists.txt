@@ -1,3 +1,3 @@
 add_executable(test_csv_parser test_csv_parser.c)
-target_link_libraries(test_csv_parser m)
+target_link_libraries(test_csv_parser PUBLIC dataparser unity_framework)
 add_test(NAME test_csv_parser COMMAND test_csv_parser)
