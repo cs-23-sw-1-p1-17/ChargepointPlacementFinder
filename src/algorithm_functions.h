@@ -1,3 +1,4 @@
+#pragma once
 #include "graph_functions.h"
 #include <math.h>
 #define NODE_ATTRACTION_FACTOR 0.04
