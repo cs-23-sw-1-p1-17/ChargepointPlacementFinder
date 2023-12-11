@@ -16,5 +16,8 @@ int main() {
 
     print_solution_nodes(solution_nodes, TEST_NETWORK_NODE_AMOUNT);
 
+free(nodes);
+free(edges);
+free(solution_nodes);
     return 0;
 }
