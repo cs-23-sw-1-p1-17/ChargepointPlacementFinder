@@ -95,23 +95,23 @@ void test_parsing_of_nodes_on_example_data(void) {
     TEST_ASSERT_EQUAL_STRING_MESSAGE("Kolding N", nodes[7].name,"Failed reading correct name");
     TEST_ASSERT_EQUAL_STRING_MESSAGE("Billund", nodes[0].name,"Failed reading correct name");
     // Test of Node ID
-    TEST_ASSERT_EQUAL_INT_MESSAGE(10, nodes[9].node_id, "Failed reading correct node id");
+    TEST_ASSERT_EQUAL_INT_MESSAGE(10, nodes[9].node_id,  "Failed reading correct node id");
     TEST_ASSERT_EQUAL_INT_MESSAGE(16, nodes[15].node_id, "Failed reading correct node id");
     TEST_ASSERT_EQUAL_INT_MESSAGE(13, nodes[12].node_id, "Failed reading correct node id");
-    TEST_ASSERT_EQUAL_INT_MESSAGE(8, nodes[7].node_id, "Failed reading correct node id");
-    TEST_ASSERT_EQUAL_INT_MESSAGE(1, nodes[0].node_id, "Failed reading correct node id");
+    TEST_ASSERT_EQUAL_INT_MESSAGE(8, nodes[7].node_id,   "Failed reading correct node id");
+    TEST_ASSERT_EQUAL_INT_MESSAGE(1, nodes[0].node_id,   "Failed reading correct node id");
     // Test of Node Charger Present
-    TEST_ASSERT_EQUAL_INT_MESSAGE(1, nodes[9].charger_present, "Failed reading correct node charger present");
+    TEST_ASSERT_EQUAL_INT_MESSAGE(1, nodes[9].charger_present,  "Failed reading correct node charger present");
     TEST_ASSERT_EQUAL_INT_MESSAGE(0, nodes[15].charger_present, "Failed reading correct node charger present");
     TEST_ASSERT_EQUAL_INT_MESSAGE(1, nodes[12].charger_present, "Failed reading correct node charger present");
-    TEST_ASSERT_EQUAL_INT_MESSAGE(1, nodes[7].charger_present, "Failed reading correct node charger present");
-    TEST_ASSERT_EQUAL_INT_MESSAGE(1, nodes[0].charger_present, "Failed reading correct node charger present");
+    TEST_ASSERT_EQUAL_INT_MESSAGE(1, nodes[7].charger_present,  "Failed reading correct node charger present");
+    TEST_ASSERT_EQUAL_INT_MESSAGE(1, nodes[0].charger_present,  "Failed reading correct node charger present");
     // Test of Node Quality
-    TEST_ASSERT_EQUAL_DOUBLE_MESSAGE(3.89, nodes[9].quality_of_stop, "Failed reading correct node quality");
+    TEST_ASSERT_EQUAL_DOUBLE_MESSAGE(3.89, nodes[9].quality_of_stop,  "Failed reading correct node quality");
     TEST_ASSERT_EQUAL_DOUBLE_MESSAGE(0.00, nodes[15].quality_of_stop, "Failed reading correct node quality");
     TEST_ASSERT_EQUAL_DOUBLE_MESSAGE(3.89, nodes[12].quality_of_stop, "Failed reading correct node quality");
-    TEST_ASSERT_EQUAL_DOUBLE_MESSAGE(4.74, nodes[7].quality_of_stop, "Failed reading correct node quality");
-    TEST_ASSERT_EQUAL_DOUBLE_MESSAGE(3.06, nodes[0].quality_of_stop, "Failed reading correct node quality");
+    TEST_ASSERT_EQUAL_DOUBLE_MESSAGE(4.74, nodes[7].quality_of_stop,  "Failed reading correct node quality");
+    TEST_ASSERT_EQUAL_DOUBLE_MESSAGE(3.06, nodes[0].quality_of_stop,  "Failed reading correct node quality");
 }
 /// @breif testing if parse_edges in csv_parser works on edges_list.csv - if test_parsing_of_nodes_on_example_data fails, this fails
 void test_parsing_of_edges_on_example_data(void) {
@@ -125,15 +125,35 @@ void test_parsing_of_edges_on_example_data(void) {
 
     // ASSERTIONS
     // Test of Names
-    TEST_ASSERT_EQUAL_STRING_MESSAGE("", edges[].name, "Failed reading correct edge name");
+    TEST_ASSERT_EQUAL_STRING_MESSAGE("E45 �stjyske Motorvej p� Vejlefjordsbroen", edges[10].name, "Failed reading correct edge name");
+    TEST_ASSERT_EQUAL_STRING_MESSAGE("11  24 Ved Ribe", edges[0].name, "Failed reading correct edge name");
+    TEST_ASSERT_EQUAL_STRING_MESSAGE("30 mellem Billund og Give", edges[19].name, "Failed reading correct edge name");
+    TEST_ASSERT_EQUAL_STRING_MESSAGE("E45 mellem Smidstrup Pr�stemark og Kolding N", edges[13].name, "Failed reading correct edge name");
+    TEST_ASSERT_EQUAL_STRING_MESSAGE("30 Ved Grindsted", edges[4].name, "Failed reading correct edge name");
     // Test of Traffic
-    TEST_ASSERT_EQUAL_INT_MESSAGE(0, edges[].traffic, "Failed reading correct edge traffic");
+    TEST_ASSERT_EQUAL_INT_MESSAGE(11416, edges[10].traffic, "Failed reading correct edge traffic");
+    TEST_ASSERT_EQUAL_INT_MESSAGE(12527, edges[0].traffic,  "Failed reading correct edge traffic");
+    TEST_ASSERT_EQUAL_INT_MESSAGE(7500,  edges[19].traffic, "Failed reading correct edge traffic");
+    TEST_ASSERT_EQUAL_INT_MESSAGE(30000, edges[13].traffic, "Failed reading correct edge traffic");
+    TEST_ASSERT_EQUAL_INT_MESSAGE(5781,  edges[4].traffic,  "Failed reading correct edge traffic");
     // Test of Length
-    TEST_ASSERT_EQUAL_DOUBLE_MESSAGE(0.0,  edges[].distance, "Failed reading correct edge distance");
+    TEST_ASSERT_EQUAL_DOUBLE_MESSAGE(13.2, edges[10].distance, "Failed reading correct edge distance");
+    TEST_ASSERT_EQUAL_DOUBLE_MESSAGE(11.0, edges[0].distance,  "Failed reading correct edge distance");
+    TEST_ASSERT_EQUAL_DOUBLE_MESSAGE(24.7, edges[19].distance, "Failed reading correct edge distance");
+    TEST_ASSERT_EQUAL_DOUBLE_MESSAGE(20.3, edges[13].distance, "Failed reading correct edge distance");
+    TEST_ASSERT_EQUAL_DOUBLE_MESSAGE(34.8, edges[4].distance,  "Failed reading correct edge distance");
     // Test of node.id 1
-    TEST_ASSERT_EQUAL_INT_MESSAGE(0, edges[].connection1->node_id, "Failed reading correct node.id 1 connection");
+    TEST_ASSERT_EQUAL_INT_MESSAGE(2,  edges[10].connection1->node_id, "Failed reading correct node.id 1 connection");
+    TEST_ASSERT_EQUAL_INT_MESSAGE(11, edges[0].connection1->node_id,  "Failed reading correct node.id 1 connection");
+    TEST_ASSERT_EQUAL_INT_MESSAGE(1,  edges[19].connection1->node_id, "Failed reading correct node.id 1 connection");
+    TEST_ASSERT_EQUAL_INT_MESSAGE(8,  edges[13].connection1->node_id, "Failed reading correct node.id 1 connection");
+    TEST_ASSERT_EQUAL_INT_MESSAGE(6,  edges[4].connection1->node_id,  "Failed reading correct node.id 1 connection");
     // Test of node.id 2
-    TEST_ASSERT_EQUAL_INT_MESSAGE(0, edges[].connection2->node_id, "Failed reading correct node.id 2 connection");
+    TEST_ASSERT_EQUAL_INT_MESSAGE(10, edges[10].connection2->node_id, "Failed reading correct node.id 2 connection");
+    TEST_ASSERT_EQUAL_INT_MESSAGE(12, edges[0].connection2->node_id,  "Failed reading correct node.id 2 connection");
+    TEST_ASSERT_EQUAL_INT_MESSAGE(5,  edges[19].connection2->node_id, "Failed reading correct node.id 2 connection");
+    TEST_ASSERT_EQUAL_INT_MESSAGE(13, edges[13].connection2->node_id, "Failed reading correct node.id 2 connection");
+    TEST_ASSERT_EQUAL_INT_MESSAGE(10, edges[4].connection2->node_id,  "Failed reading correct node.id 2 connection");
 }
 
 // not needed when using generate_test_runner.rb
