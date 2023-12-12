@@ -89,13 +89,29 @@ void test_parsing_of_nodes_on_example_data(void) {
 
     // ASSERTIONS
     // Test of Name
-    TEST_ASSERT_EQUAL_STRING_MESSAGE("", nodes[].name,"Failed reading correct name");
+    TEST_ASSERT_EQUAL_STRING_MESSAGE("Korskro", nodes[9].name,"Failed reading correct name");
+    TEST_ASSERT_EQUAL_STRING_MESSAGE("�lholm", nodes[15].name,"Failed reading correct name");
+    TEST_ASSERT_EQUAL_STRING_MESSAGE("Smidstrup Pr�stemark", nodes[12].name,"Failed reading correct name");
+    TEST_ASSERT_EQUAL_STRING_MESSAGE("Kolding N", nodes[7].name,"Failed reading correct name");
+    TEST_ASSERT_EQUAL_STRING_MESSAGE("Billund", nodes[0].name,"Failed reading correct name");
     // Test of Node ID
-    TEST_ASSERT_EQUAL_INT_MESSAGE(0, nodes[].node_id, "Failed reading correct node id");
+    TEST_ASSERT_EQUAL_INT_MESSAGE(10, nodes[9].node_id, "Failed reading correct node id");
+    TEST_ASSERT_EQUAL_INT_MESSAGE(16, nodes[15].node_id, "Failed reading correct node id");
+    TEST_ASSERT_EQUAL_INT_MESSAGE(13, nodes[12].node_id, "Failed reading correct node id");
+    TEST_ASSERT_EQUAL_INT_MESSAGE(8, nodes[7].node_id, "Failed reading correct node id");
+    TEST_ASSERT_EQUAL_INT_MESSAGE(1, nodes[0].node_id, "Failed reading correct node id");
     // Test of Node Charger Present
-    TEST_ASSERT_EQUAL_INT_MESSAGE(0, nodes[].charger_present, "Failed reading correct node charger present");
+    TEST_ASSERT_EQUAL_INT_MESSAGE(1, nodes[9].charger_present, "Failed reading correct node charger present");
+    TEST_ASSERT_EQUAL_INT_MESSAGE(0, nodes[15].charger_present, "Failed reading correct node charger present");
+    TEST_ASSERT_EQUAL_INT_MESSAGE(1, nodes[12].charger_present, "Failed reading correct node charger present");
+    TEST_ASSERT_EQUAL_INT_MESSAGE(1, nodes[7].charger_present, "Failed reading correct node charger present");
+    TEST_ASSERT_EQUAL_INT_MESSAGE(1, nodes[0].charger_present, "Failed reading correct node charger present");
     // Test of Node Quality
-    TEST_ASSERT_EQUAL_DOUBLE_MESSAGE(0.0, nodes[].quality_of_stop, "Failed reading correct node quality");
+    TEST_ASSERT_EQUAL_DOUBLE_MESSAGE(3.89, nodes[9].quality_of_stop, "Failed reading correct node quality");
+    TEST_ASSERT_EQUAL_DOUBLE_MESSAGE(0.00, nodes[15].quality_of_stop, "Failed reading correct node quality");
+    TEST_ASSERT_EQUAL_DOUBLE_MESSAGE(3.89, nodes[12].quality_of_stop, "Failed reading correct node quality");
+    TEST_ASSERT_EQUAL_DOUBLE_MESSAGE(4.74, nodes[7].quality_of_stop, "Failed reading correct node quality");
+    TEST_ASSERT_EQUAL_DOUBLE_MESSAGE(3.06, nodes[0].quality_of_stop, "Failed reading correct node quality");
 }
 /// @breif testing if parse_edges in csv_parser works on edges_list.csv - if test_parsing_of_nodes_on_example_data fails, this fails
 void test_parsing_of_edges_on_example_data(void) {
