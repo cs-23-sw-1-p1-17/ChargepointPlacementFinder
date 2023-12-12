@@ -36,6 +36,7 @@ void test_parsing_of_nodes_on_test_nodes(void) {
     TEST_ASSERT_EQUAL_DOUBLE_MESSAGE(5,    test_nodes[2].quality_of_stop, "Failed reading correct node quality");
     TEST_ASSERT_EQUAL_DOUBLE_MESSAGE(0,    test_nodes[3].quality_of_stop, "Failed reading correct node quality");
 }
+
 /// @breif testing if parse_edges in csv_parser works on test_edges.csv.csv - if test_parsing_of_nodes_on_test_nodes fails, this fails
 void test_parsing_of_edges_on_test_edges(void) {
     // ARRANGE initialising working struct-arrays
