@@ -1,6 +1,6 @@
 #include "csv_parser.h"
 
-void parse_nodes(const char *filepath, node_t *nodes) {
+void parse_nodes(const char *filepath, node_t *nodes, int n) {
     // open file with nodes
     FILE *input_fp = NULL;
     input_fp = fopen(filepath, "r");
@@ -10,7 +10,7 @@ void parse_nodes(const char *filepath, node_t *nodes) {
         exit(EXIT_FAILURE);
     }
 
-    for (int i = 0; i < NUM_EXAMPLE_NODES; ++i) {
+    for (int i = 0; i < n; ++i) {
         // creating temp variables
         node_t node;
 
@@ -25,7 +25,7 @@ void parse_nodes(const char *filepath, node_t *nodes) {
     }
 }
 
-void parse_edges(const char *filepath, edge_t *edges, node_t *nodes) {
+void parse_edges(const char *filepath, edge_t *edges, node_t *nodes, int n) {
     // open file with edges
     FILE *input_fp = NULL;
     input_fp = fopen(filepath, "r");
@@ -35,7 +35,7 @@ void parse_edges(const char *filepath, edge_t *edges, node_t *nodes) {
         exit(EXIT_FAILURE);
     }
 
-    for (int i = 0; i < NUM_EXAMPLE_EDGES; ++i) {
+    for (int i = 0; i < n; ++i) {
         // creating temp variables
         edge_t edge;
         int node_a;
@@ -70,10 +70,10 @@ void parsing_debug_print(edge_t *edges) {
 
 void parsing_debug() {
     node_t nodes[NUM_EXAMPLE_NODES];
-    parse_nodes(NODE_LIST_FILEPATH, nodes);
+    parse_nodes(NODE_LIST_FILEPATH, nodes, NUM_EXAMPLE_NODES);
 
     edge_t edges[NUM_EXAMPLE_EDGES];
-    parse_edges(EDGE_LIST_FILEPATH, edges, nodes);
+    parse_edges(EDGE_LIST_FILEPATH, edges, nodes, NUM_EXAMPLE_EDGES);
 
     parsing_debug_print(edges);
 }
