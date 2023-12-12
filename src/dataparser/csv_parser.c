@@ -68,16 +68,12 @@ void parsing_debug_print(edge_t *edges) {
     }
 }
 
-void parsing() {
-    printf("hello\n");
-
+void parsing_debug() {
     node_t nodes[NUM_EXAMPLE_NODES];
     parse_nodes(NODE_LIST_FILEPATH, nodes);
 
     edge_t edges[NUM_EXAMPLE_EDGES];
     parse_edges(EDGE_LIST_FILEPATH, edges, nodes);
-    printf("HOOOOOOLAAAAA\n");
 
     parsing_debug_print(edges);
 }
-
