@@ -1,6 +1,4 @@
-#include "csv_parser.h"
-#include "graph_functions.h"
-#include "unity.h"
+#include "test_cvs_parser.h"
 
 void setUp(void) {
     // set stuff up here
@@ -14,7 +12,7 @@ void test_parsing_of_nodes_on_test_nodes(void) {
     node_t test_nodes[4];
 
     // ACT
-    parse_nodes("test/dataparser/test_nodes.csv",test_nodes,4);
+    parse_nodes(TEST_NODES_FILEPATH,test_nodes,4);
 
     // ASSERTIONS
     // Test of Name
@@ -45,8 +43,8 @@ void test_parsing_of_edges_on_test_edges(void) {
     edge_t test_edges[5];
 
     // ACT
-    parse_nodes("test/dataparser/test_nodes.csv",test_nodes,4);
-    parse_edges("test/dataparser/test_edges.csv",test_edges, test_nodes, 5);
+    parse_nodes(TEST_NODES_FILEPATH,test_nodes,4);
+    parse_edges(TEST_EDGES_FILEPATH,test_edges, test_nodes, 5);
 
     // ASSERTIONS
     // Test of Names
@@ -90,8 +88,14 @@ void test_parsing_of_nodes_on_example_data(void) {
     parse_nodes(NODE_LIST_FILEPATH, nodes, NUM_EXAMPLE_NODES);
 
     // ASSERTIONS
-    TEST_MESSAGE("Test not written yet");
-    TEST_ASSERT(1);
+    // Test of Name
+    TEST_ASSERT_EQUAL_STRING_MESSAGE("", nodes[].name,"Failed reading correct name");
+    // Test of Node ID
+    TEST_ASSERT_EQUAL_INT_MESSAGE(0, nodes[].node_id, "Failed reading correct node id");
+    // Test of Node Charger Present
+    TEST_ASSERT_EQUAL_INT_MESSAGE(0, nodes[].charger_present, "Failed reading correct node charger present");
+    // Test of Node Quality
+    TEST_ASSERT_EQUAL_DOUBLE_MESSAGE(0.0, nodes[].quality_of_stop, "Failed reading correct node quality");
 }
 /// @breif testing if parse_edges in csv_parser works on edges_list.csv - if test_parsing_of_nodes_on_example_data fails, this fails
 void test_parsing_of_edges_on_example_data(void) {
@@ -104,8 +108,16 @@ void test_parsing_of_edges_on_example_data(void) {
     parse_edges(EDGE_LIST_FILEPATH, edges, nodes, NUM_EXAMPLE_EDGES);
 
     // ASSERTIONS
-    TEST_MESSAGE("Test not written yet");
-    TEST_ASSERT(1);
+    // Test of Names
+    TEST_ASSERT_EQUAL_STRING_MESSAGE("", edges[].name, "Failed reading correct edge name");
+    // Test of Traffic
+    TEST_ASSERT_EQUAL_INT_MESSAGE(0, edges[].traffic, "Failed reading correct edge traffic");
+    // Test of Length
+    TEST_ASSERT_EQUAL_DOUBLE_MESSAGE(0.0,  edges[].distance, "Failed reading correct edge distance");
+    // Test of node.id 1
+    TEST_ASSERT_EQUAL_INT_MESSAGE(0, edges[].connection1->node_id, "Failed reading correct node.id 1 connection");
+    // Test of node.id 2
+    TEST_ASSERT_EQUAL_INT_MESSAGE(0, edges[].connection2->node_id, "Failed reading correct node.id 2 connection");
 }
 
 // not needed when using generate_test_runner.rb
