@@ -5,7 +5,7 @@
 #include <stdlib.h>
 
 typedef struct {
-    char name[48];
+    char name[48]; // TODO: Remove Magic-value.
     int node_id;
     double quality_of_stop;
     int charger_present;
