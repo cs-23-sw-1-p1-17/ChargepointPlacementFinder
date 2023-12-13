@@ -22,4 +22,4 @@ typedef struct {
 
 
 int get_cell(int matrix_size, int x, int y);
-
+edge_t* convert_edge_list_to_matrix(edge_t *edge_list, int edge_list_length, int node_list_length);

@@ -46,7 +46,7 @@ void parse_edges(const char *filepath, edge_t *edges, node_t *nodes, int n) {
                         edge.name, &edge.traffic, &edge.distance, &node_a, &node_b);
 
         // assign connecting nodes
-        edge.connection1 = &nodes[node_a-1]; // minus one as graph stuff i 1-index but array is 0-indexed
+        edge.connection1 = &nodes[node_a-1]; // minus one as list is 1-index but array is 0-indexed
         edge.connection2 = &nodes[node_b-1];
 
         // assign if successfully parsed

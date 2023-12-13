@@ -15,4 +15,4 @@ add_subdirectory(console_output)
 
 # add main executable
 add_executable(main main.c)
-target_link_libraries(main PRIVATE algorithm sample_network console_output)
+target_link_libraries(main PRIVATE algorithm console_output dataparser sample_network)
