@@ -18,15 +18,3 @@ int main() {
     free(edge_matrix);
     return 0;
 }
-
-
-//node_t nodes[SAMPLE_DATA_NODE_COUNT];
-//parse_nodes(NODE_LIST_FILEPATH, nodes, SAMPLE_DATA_NODE_COUNT);
-//edge_t edges[SAMPLE_DATA_EDGE_COUNT];
-//parse_edges(EDGE_LIST_FILEPATH, edges, nodes, SAMPLE_DATA_EDGE_COUNT);
-//printf("hello\n");
-//solution_node_t* solution_nodes = create_solution_array(nodes, SAMPLE_DATA_NODE_COUNT, edges);
-//printf("hello\n");
-//print_solution_nodes(solution_nodes, SAMPLE_DATA_NODE_COUNT);
-//
-//free(solution_nodes);
