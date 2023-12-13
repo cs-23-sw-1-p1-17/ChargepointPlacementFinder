@@ -1,4 +1,3 @@
-#include <stdio.h>
 #include "algorithm_functions.h"
 #include "print_function.h"
 #include "graph_functions.h"
