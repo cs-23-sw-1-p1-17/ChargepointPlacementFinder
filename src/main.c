@@ -3,7 +3,6 @@
 #include "print_function.h"
 #include "graph_functions.h"
 #include "csv_parser.h"
-#include "sample_network.h"
 
 int main() {
     node_t node_list[LEN_NODE_LIST];
