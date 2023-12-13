@@ -19,7 +19,7 @@ void parse_nodes(const char *filepath, node_t *nodes, int n) {
                         node.name, &node.node_id, &node.charger_present, &node.quality_of_stop);
 
         // assign to if successfully parsed
-        if (rt == NUM_EXAMPLE_NODE_PARSED_VALUES){
+        if (rt == EXPECTED_PARSED_VALUES_PR_NODE){
             nodes[i] = node;
         }
     }
@@ -50,14 +50,14 @@ void parse_edges(const char *filepath, edge_t *edges, node_t *nodes, int n) {
         edge.connection2 = &nodes[node_b-1];
 
         // assign if successfully parsed
-        if (rt == NUM_EXAMPLE_EDGE_PARSED_VALUES) {
+        if (rt == EXPECTED_PARSED_VALUES_PR_EDGE) {
             edges[i] = edge;
         }
     }
 }
 
 void parsing_debug_print(edge_t *edges) {
-    for (int i = 0; i < NUM_EXAMPLE_EDGES; ++i) {
+    for (int i = 0; i < LEN_EDGE_LIST; ++i) {
         printf("::: %d :::\nE-name:       %s\nE-traffic:    %d\nE-distance:   %lf\n",
                i+1, edges[i].name, edges[i].traffic, edges[i].distance);
         printf("->n1-name:    %s\n->n1-id:      %d\n->n1-quality: %lf\n->n1-charger: %d\n",
@@ -69,11 +69,11 @@ void parsing_debug_print(edge_t *edges) {
 }
 
 void parsing_debug() {
-    node_t nodes[NUM_EXAMPLE_NODES];
-    parse_nodes(NODE_LIST_FILEPATH, nodes, NUM_EXAMPLE_NODES);
+    node_t nodes[LEN_NODE_LIST];
+    parse_nodes(NODE_LIST_FILEPATH, nodes, LEN_NODE_LIST);
 
-    edge_t edges[NUM_EXAMPLE_EDGES];
-    parse_edges(EDGE_LIST_FILEPATH, edges, nodes, NUM_EXAMPLE_EDGES);
+    edge_t edges[LEN_EDGE_LIST];
+    parse_edges(EDGE_LIST_FILEPATH, edges, nodes, LEN_EDGE_LIST);
 
     parsing_debug_print(edges);
 }

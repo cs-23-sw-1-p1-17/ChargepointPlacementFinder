@@ -83,10 +83,10 @@ void test_parsing_of_edges_on_test_edges(void) {
 /// @breif testing if parse_nodes in csv_parser works on nodes_list.csv
 void test_parsing_of_nodes_on_example_data(void) {
     // ARRANGE  initialising working struct-array
-    node_t nodes[NUM_EXAMPLE_NODES];
+    node_t nodes[LEN_NODE_LIST];
 
     // ACT
-    parse_nodes(NODE_LIST_FILEPATH, nodes, NUM_EXAMPLE_NODES);
+    parse_nodes(NODE_LIST_FILEPATH, nodes, LEN_NODE_LIST);
 
     // ASSERTIONS
     // Test of Name
@@ -117,12 +117,12 @@ void test_parsing_of_nodes_on_example_data(void) {
 /// @breif testing if parse_edges in csv_parser works on edges_list.csv - if test_parsing_of_nodes_on_example_data fails, this fails
 void test_parsing_of_edges_on_example_data(void) {
     // ARRANGE initialising working struct-arrays
-    node_t nodes[NUM_EXAMPLE_NODES];
-    edge_t edges[NUM_EXAMPLE_EDGES];
+    node_t nodes[LEN_NODE_LIST];
+    edge_t edges[LEN_EDGE_LIST];
 
     // ARRANGE
-    parse_nodes(NODE_LIST_FILEPATH, nodes, NUM_EXAMPLE_NODES);
-    parse_edges(EDGE_LIST_FILEPATH, edges, nodes, NUM_EXAMPLE_EDGES);
+    parse_nodes(NODE_LIST_FILEPATH, nodes, LEN_NODE_LIST);
+    parse_edges(EDGE_LIST_FILEPATH, edges, nodes, LEN_EDGE_LIST);
 
     // ASSERTIONS
     // Test of Names

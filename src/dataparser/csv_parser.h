@@ -5,12 +5,12 @@
 #include <string.h>
 #include "graph_functions.h"
 
-#define NUM_EXAMPLE_NODES 16
-#define NUM_EXAMPLE_EDGES 20
-#define NUM_EXAMPLE_NODE_PARSED_VALUES 4
-#define NUM_EXAMPLE_EDGE_PARSED_VALUES 5
+#define EXPECTED_PARSED_VALUES_PR_NODE 4
+#define EXPECTED_PARSED_VALUES_PR_EDGE 5
 #define NODE_LIST_FILEPATH ("src/dataparser/node_list.csv")
 #define EDGE_LIST_FILEPATH ("src/dataparser/edge_list.csv")
+#define LEN_NODE_LIST 16
+#define LEN_EDGE_LIST 20
 
 /// @breif Parsing of nodes from .csv file (semicolon)
 /// @param filepath - filepath from working dir
