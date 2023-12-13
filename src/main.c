@@ -14,7 +14,7 @@ int main() {
 
     solution_node_t* solution_nodes = create_solution_array(node_list, LEN_NODE_LIST, edge_matrix);
     sort_solution_node_array(solution_nodes,LEN_NODE_LIST);
-    print_solution_nodes(solution_nodes, LEN_NODE_LIST);
+    print_solution_nodes(solution_nodes, LEN_NODE_LIST, node_list);
 
     free(solution_nodes);
     free(edge_matrix);
