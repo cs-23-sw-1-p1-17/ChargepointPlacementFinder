@@ -5,3 +5,6 @@ add_library(dataparser
 target_include_directories(dataparser PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 
 target_link_libraries(dataparser PUBLIC graph)
+
+configure_file(edge_list.csv ${CMAKE_BINARY_DIR}/src/dataparser/edge_list.csv COPYONLY)
+configure_file(node_list.csv ${CMAKE_BINARY_DIR}/src/dataparser/node_list.csv COPYONLY)

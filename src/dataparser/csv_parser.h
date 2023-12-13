@@ -7,8 +7,8 @@
 
 #define EXPECTED_PARSED_VALUES_PR_NODE 4
 #define EXPECTED_PARSED_VALUES_PR_EDGE 5
-#define NODE_LIST_FILEPATH ("src/dataparser/node_list.csv")
-#define EDGE_LIST_FILEPATH ("src/dataparser/edge_list.csv")
+#define NODE_LIST_FILEPATH ("dataparser/node_list.csv")
+#define EDGE_LIST_FILEPATH ("dataparser/edge_list.csv")
 #define LEN_NODE_LIST 16
 #define LEN_EDGE_LIST 20
 
