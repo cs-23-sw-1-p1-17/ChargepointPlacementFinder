@@ -17,7 +17,7 @@ jobs:
       - uses: ZedThree/clang-tidy-review@v0.14.0
         id: review
         with:
-          lgtm_comment_body: "Wow, du kan faktisk kode... Ingen fejl fundet."
+          lgtm_comment_body: ""
           exclude: "external/*"
 
       # Uploads an artefact containing clang_fixes.json
