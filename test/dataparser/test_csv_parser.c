@@ -91,7 +91,7 @@ void test_parsing_of_nodes_on_example_data(void) {
     // ASSERTIONS
     // Test of Name
     TEST_ASSERT_EQUAL_STRING_MESSAGE("Korskro", nodes[9].name,"Failed reading correct name");
-    TEST_ASSERT_EQUAL_STRING_MESSAGE("oelholm", nodes[15].name,"Failed reading correct name");
+    TEST_ASSERT_EQUAL_STRING_MESSAGE("Oelholm", nodes[15].name,"Failed reading correct name");
     TEST_ASSERT_EQUAL_STRING_MESSAGE("Smidstrup Praestemark", nodes[12].name,"Failed reading correct name");
     TEST_ASSERT_EQUAL_STRING_MESSAGE("Kolding N", nodes[7].name,"Failed reading correct name");
     TEST_ASSERT_EQUAL_STRING_MESSAGE("Billund", nodes[0].name,"Failed reading correct name");
