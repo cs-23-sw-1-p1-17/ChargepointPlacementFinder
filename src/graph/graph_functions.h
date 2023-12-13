@@ -16,11 +16,12 @@ typedef struct {
     bool is_present;
     int traffic;
     double distance;
-    node_t* connection1;
-    node_t* connection2;
+    node_t *connection1;
+    node_t *connection2;
 } edge_t;
 
 
 int get_cell(int matrix_size, int x, int y);
+
 // TODO: Reorder parameters, to be int, edge_t, int
-edge_t* convert_edge_list_to_matrix(edge_t *edge_list, int edge_list_length, int node_list_length);
+edge_t *convert_edge_list_to_matrix(edge_t *edge_list, int edge_list_length, int node_list_length);

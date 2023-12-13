@@ -17,6 +17,7 @@
 /// @param nodes - struct-array of node_t type
 /// @param n - number of nodes
 void parse_nodes(const char *filepath, node_t *nodes, int n);
+
 /// @breif Parsing of edges from .csv file (semicolon)
 /// @param filepath - filepath from working dir
 /// @param edges - struct-array of edge_t type
