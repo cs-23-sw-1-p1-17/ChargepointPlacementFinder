@@ -86,7 +86,7 @@ void test_parsing_of_nodes_on_example_data(void) {
     node_t nodes[LEN_NODE_LIST];
 
     // ACT
-    parse_nodes(NODE_LIST_FILEPATH, nodes, LEN_NODE_LIST);
+    parse_nodes(SAMPLE_NODES_FILEPATH, nodes, LEN_NODE_LIST);
 
     // ASSERTIONS
     // Test of Name
@@ -121,8 +121,8 @@ void test_parsing_of_edges_on_example_data(void) {
     edge_t edges[LEN_EDGE_LIST];
 
     // ARRANGE
-    parse_nodes(NODE_LIST_FILEPATH, nodes, LEN_NODE_LIST);
-    parse_edges(EDGE_LIST_FILEPATH, edges, nodes, LEN_EDGE_LIST);
+    parse_nodes(SAMPLE_NODES_FILEPATH, nodes, LEN_NODE_LIST);
+    parse_edges(SAMPLE_EDGES_FILEPATH, edges, nodes, LEN_EDGE_LIST);
 
     // ASSERTIONS
     // Test of Names
