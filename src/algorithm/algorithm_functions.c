@@ -41,7 +41,7 @@ solution_node_t *create_solution_array(node_t *node_list, int node_list_length, 
         }
 
         // Save current traffic attracted in some form of array
-        current_solution_node.node_ID = node_list[i].node_id;
+        current_solution_node.node_id = node_list[i].node_id;
         current_solution_node.total_traffic_attracted = total_traffic_attracted;
 
         solution_array[i] = current_solution_node;

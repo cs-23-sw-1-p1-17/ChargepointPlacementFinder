@@ -6,7 +6,7 @@
 #define NODE_ATTRACTION_FACTOR 0.04
 
 typedef struct {
-    int node_ID;
+    int node_id;
     int total_traffic_attracted;
 } solution_node_t;
 
