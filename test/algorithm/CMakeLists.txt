@@ -1,0 +1,3 @@
+add_executable(test_algorithm test_algorithm.c)
+target_link_libraries(test_algorithm PUBLIC algorithm unity_framework)
+add_test(NAME test_algorithm COMMAND test_algorithm)
