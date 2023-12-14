@@ -1,6 +1,6 @@
 #include "algorithm_functions.h"
 
-solution_node_t* create_solution_array(node_t* node_list, int node_list_length, edge_t* edge_matrix) {
+solution_node_t *create_solution_array(node_t *node_list, int node_list_length, edge_t *edge_matrix) {
     // Create solution node array
     solution_node_t *solution_array = (solution_node_t *) malloc(sizeof(solution_node_t) * node_list_length);
     solution_node_t current_solution_node;
@@ -32,15 +32,16 @@ solution_node_t* create_solution_array(node_t* node_list, int node_list_length, 
                     secondary_node_traffic += edge_matrix[get_cell(node_list_length, j, k)].traffic;
                 }
 
-                secondary_node_traffic -= edge_matrix[get_cell(node_list_length, i , j)].traffic;
-                secondary_node_traffic = floor(secondary_node_traffic * get_secondary_factor(node_list[i].quality_of_stop,
-                                                                                             node_list[j].quality_of_stop));
+                secondary_node_traffic -= edge_matrix[get_cell(node_list_length, i, j)].traffic;
+                secondary_node_traffic = floor(
+                        secondary_node_traffic * get_secondary_factor(node_list[i].quality_of_stop,
+                                                                      node_list[j].quality_of_stop));
                 total_traffic_attracted += secondary_node_traffic;
             }
         }
 
         // Save current traffic attracted in some form of array
-        current_solution_node.node_ID = node_list[i].node_id;
+        current_solution_node.node_id = node_list[i].node_id;
         current_solution_node.total_traffic_attracted = total_traffic_attracted;
 
         solution_array[i] = current_solution_node;
@@ -49,17 +50,17 @@ solution_node_t* create_solution_array(node_t* node_list, int node_list_length, 
     return solution_array;
 }
 
-node_t* get_connected_node (node_t* current_node, edge_t current_edge) {
+node_t *get_connected_node(node_t *current_node, edge_t current_edge) {
     return current_edge.connection1 == current_node ? current_edge.connection2 : current_edge.connection1;
 }
 
-int compare_solution_node(const void* solution_node_a, const void* solution_node_b) {
-    solution_node_t a1 = *(solution_node_t*) solution_node_a;
-    solution_node_t b1 = *(solution_node_t*) solution_node_b;
+int compare_solution_node(const void *solution_node_a, const void *solution_node_b) {
+    solution_node_t a1 = *(solution_node_t *) solution_node_a;
+    solution_node_t b1 = *(solution_node_t *) solution_node_b;
     return b1.total_traffic_attracted - a1.total_traffic_attracted;
 }
 
-void sort_solution_node_array(solution_node_t* solution_nodes, int length_of_solution_nodes) {
+void sort_solution_node_array(solution_node_t *solution_nodes, int length_of_solution_nodes) {
     qsort(solution_nodes, length_of_solution_nodes, sizeof(solution_node_t), compare_solution_node);
 }
 

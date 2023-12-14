@@ -1,15 +1,18 @@
-add_library(graph_functions graph_functions.c)
-target_link_libraries(graph_functions m)
-target_include_directories(graph_functions PUBLIC .)
+# General library
+add_subdirectory(graph)
 
-add_library(algorithm_functions algorithm_functions.c)
-target_link_libraries(algorithm_functions graph_functions m)
-target_include_directories(algorithm_functions PUBLIC .)
-
+# Dataparser utility (dependent on graph)
 add_subdirectory(dataparser)
 
-add_executable(main main.c
-        print_function.c
-        sample_network.c)
-target_link_libraries(main algorithm_functions)
-target_link_libraries(main m)
+# Sample networks hardcoded (dependent on graph)
+add_subdirectory(sample_network)
+
+# Algorithm library (dependent on graph)
+add_subdirectory(algorithm)
+
+# Print library (dependent on algorithm)
+add_subdirectory(console_output)
+
+# add main executable
+add_executable(main main.c)
+target_link_libraries(main PRIVATE algorithm console_output dataparser sample_network)
