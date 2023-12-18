@@ -15,10 +15,10 @@ edge_t *convert_edge_list_to_matrix(edge_t *edge_list, int edge_list_length, int
     }
 
     for (int i = 0; i < edge_list_length; ++i) {
-        edge_matrix[get_cell(node_list_length, edge_list[i].connection1->node_id,
-                             edge_list[i].connection2->node_id)] = edge_list[i];
-        edge_matrix[get_cell(node_list_length, edge_list[i].connection2->node_id,
-                             edge_list[i].connection1->node_id)] = edge_list[i];
+        edge_matrix[get_cell(node_list_length, edge_list[i].connection1->node_id - 1,
+                             edge_list[i].connection2->node_id - 1)] = edge_list[i];
+        edge_matrix[get_cell(node_list_length, edge_list[i].connection2->node_id - 1,
+                             edge_list[i].connection1->node_id - 1)] = edge_list[i];
     }
     return edge_matrix;
 }
