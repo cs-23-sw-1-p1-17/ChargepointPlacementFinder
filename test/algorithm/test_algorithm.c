@@ -164,7 +164,6 @@ void test_algorithm_on_test(void) {
     TEST_ASSERT_EQUAL_INT_MESSAGE(2520, solution[2].total_traffic_attracted, "Node total_traffic_error");
     TEST_ASSERT_EQUAL_INT_MESSAGE(2520, solution[3].total_traffic_attracted, "Node total_traffic_error");
     TEST_ASSERT_EQUAL_INT_MESSAGE(5280, solution[4].total_traffic_attracted, "Node total_traffic_error");
-
 }
 
 // not needed when using generate_test_runner.rb
