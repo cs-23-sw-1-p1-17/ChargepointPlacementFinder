@@ -2,9 +2,8 @@
 
 void print_solution_nodes(solution_node_t *solution_nodes, int length_of_solution_nodes, node_t *node_list) {
     int longest_name_length = 0;
-    int name_length;
     for (int i = 0; i < length_of_solution_nodes; ++i) {
-        name_length = strlen(node_list[solution_nodes[i].node_id-1].name);
+        int name_length = strlen(node_list[solution_nodes[i].node_id-1].name);
         if (name_length > longest_name_length){
             longest_name_length = name_length;
         }
