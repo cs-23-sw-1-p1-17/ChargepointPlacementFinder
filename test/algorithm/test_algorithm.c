@@ -150,7 +150,7 @@ void test_algorithm_on_test(void) {
 
     solution_node_t* solution = create_solution_array(nodes, 5, matrix);
 
-    //Do the NODE ID's transfer
+    // do the NODE ID's transfer
     TEST_ASSERT_EQUAL_INT_MESSAGE(1, solution[0].node_id, "Node ID transition failure");
     TEST_ASSERT_EQUAL_INT_MESSAGE(2, solution[1].node_id, "Node ID transition failure");
     TEST_ASSERT_EQUAL_INT_MESSAGE(3, solution[2].node_id, "Node ID transition failure");
