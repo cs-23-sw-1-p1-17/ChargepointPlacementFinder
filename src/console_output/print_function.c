@@ -1,7 +1,7 @@
 #include "print_function.h"
 
 void print_solution_nodes(solution_node_t *solution_nodes, int length_of_solution_nodes, node_t *node_list) {
-    int longest_name_length;
+    int longest_name_length = 0;
     for (int i = 0; i < length_of_solution_nodes; ++i) {
         if (strlen(node_list[solution_nodes[i].node_id-1].name) > longest_name_length){
             longest_name_length = strlen(node_list[solution_nodes[i].node_id-1].name);
