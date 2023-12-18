@@ -10,7 +10,7 @@ void print_solution_nodes(solution_node_t *solution_nodes, int length_of_solutio
         }
     }
 
-    // padding on both sides of 'Name' is half of the longest item in that column. It keeps the title centered
+    // padding on both sides of 'Name' is half of the longest item in that column. It keeps the title centered.
     printf(" Ranked\t| Node ID | %*c Name %*c | Traffic attracted\n", (longest_name_length/2) - 2, ' ', (longest_name_length/2) - 3, ' ');
 
     for (int i = 0; i < longest_name_length; ++i) {
