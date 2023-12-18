@@ -158,7 +158,7 @@ void test_algorithm_on_test(void) {
     TEST_ASSERT_EQUAL_INT_MESSAGE(5, solution[4].node_id, "Node ID transition failure");
 
 
-    //Test the expected result
+    // test the expected result
     TEST_ASSERT_EQUAL_INT_MESSAGE(2520, solution[0].total_traffic_attracted, "Node total_traffic_error");
     TEST_ASSERT_EQUAL_INT_MESSAGE(2520, solution[1].total_traffic_attracted, "Node total_traffic_error");
     TEST_ASSERT_EQUAL_INT_MESSAGE(2520, solution[2].total_traffic_attracted, "Node total_traffic_error");
